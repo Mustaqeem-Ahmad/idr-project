@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 80" width="340" height="80" role="img" aria-label="IDR — Institute of Digital Risk logo">
+  <title>IDR — Institute of Digital Risk</title>
+  <!--
+    IDR Logo — Icon + Text Variant
+    Combines the isometric cube icon with the wordmark.
+    Uses Syne (display) weight 800 for IDR abbreviation
+    and a lighter weight for the full institute name.
+    Falls back gracefully to system sans-serif.
+  -->
+
+  <defs>
+    <style>
+      .idr-abbr {
+        font-family: 'Syne', 'Arial Black', sans-serif;
+        font-size: 26px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        fill: #F0EDE8;
+      }
+      .idr-full {
+        font-family: 'DM Sans', 'Arial', sans-serif;
+        font-size: 9.5px;
+        font-weight: 400;
+        letter-spacing: 0.18em;
+        fill: #7A766F;
+        text-transform: uppercase;
+      }
+    </style>
+  </defs>
+
+  <!-- ─── CUBE ICON ─── -->
+
+  <!-- Top face -->
+  <polygon
+    points="40,8 65,22 40,36 15,22"
+    fill="#E8590C"
+  />
+
+  <!-- Left face -->
+  <polygon
+    points="15,22 40,36 40,62 15,48"
+    fill="#B84000"
+  />
+
+  <!-- Right face -->
+  <polygon
+    points="65,22 40,36 40,62 65,48"
+    fill="#FF7A35"
+  />
+
+  <!-- Edge highlights -->
+  <line x1="40" y1="8"  x2="40" y2="36" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
+  <line x1="15" y1="22" x2="65" y2="22" stroke="rgba(255,255,255,0.12)" stroke-width="0.7"/>
+
+  <!-- ─── WORDMARK ─── -->
+
+  <!-- IDR abbreviation -->
+  <text class="idr-abbr" x="88" y="42">IDR</text>
+
+  <!-- Full name below -->
+  <text class="idr-full" x="89" y="58">Institute of Digital Risk</text>
+
+  <!-- Vertical separator between icon and text -->
+  <line
+    x1="78" y1="18"
+    x2="78" y2="62"
+    stroke="#2e2e2e"
+    stroke-width="1"
+  />
+
+</svg>
