@@ -29,7 +29,6 @@ idr-assignment/
 ├── logo-full.svg     — Logo with text variant
 └── README.md         — This file
 ```
-
 ---
 
 ## Technical Decisions
@@ -49,8 +48,4 @@ idr-assignment/
 
 ---
 
-## Usage
 
-Open `index.html` in any modern browser.
-All three files (`index.html`, `styles.css`, `script.js`) must remain in the same directory.
-No build step, server, or dependencies required.

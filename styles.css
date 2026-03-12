@@ -26,7 +26,7 @@
 ================================================ */
 
 
-/* ── 01. DESIGN TOKENS ──────────────────────── */
+/* --- 01. DESIGN TOKENS ------------------------- */
 :root {
   /* Brand */
   --o:       #E8590C;   /* orange primary */
@@ -68,7 +68,7 @@
 }
 
 
-/* ── 02. RESET ──────────────────────────────── */
+/* --- 02. RESET ------------------------------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
@@ -101,7 +101,7 @@ address     { font-style: normal; }
 ::selection { background: var(--o); color: #fff; }
 
 
-/* ── 03. TYPOGRAPHY BASE ────────────────────── */
+/* --- 03. TYPOGRAPHY BASE ------------------------ */
 h1, h2, h3, h4 {
   font-family: var(--f-display);
   font-weight: 800;
@@ -199,7 +199,7 @@ h1, h2, h3, h4 {
 }
 
 
-/* ── 04. LAYOUT ─────────────────────────────── */
+/* --- 04. LAYOUT -------------------------------- */
 .l-container {
   width: 100%;
   max-width: var(--w-page);
@@ -210,7 +210,7 @@ h1, h2, h3, h4 {
 section { position: relative; z-index: 1; }
 
 
-/* ── 05. CUSTOM CURSOR ──────────────────────── */
+/* --- 05. CUSTOM CURSOR --------------------------- */
 .c-cursor-dot,
 .c-cursor-ring {
   position: fixed;
@@ -231,7 +231,8 @@ section { position: relative; z-index: 1; }
   width: 30px; height: 30px;
   border: 1.5px solid rgba(232, 89, 12, 0.55);
   background: transparent;
-  transition: width 0.3s var(--ease-out),
+  transition:
+              width 0.3s var(--ease-out),
               height 0.3s var(--ease-out),
               border-color 0.3s,
               background 0.3s,
@@ -249,7 +250,7 @@ body.cursor--hover .c-cursor-dot { opacity: 0; }
 @media (hover: none) { .c-cursor-dot, .c-cursor-ring { display: none; } }
 
 
-/* ── 06. SCROLL PROGRESS ────────────────────── */
+/* --- 06. SCROLL PROGRESS -------------------- */
 .c-progress {
   position: fixed;
   top: 0; left: 0;
@@ -262,7 +263,7 @@ body.cursor--hover .c-cursor-dot { opacity: 0; }
 }
 
 
-/* ── 07. SKIP LINK ──────────────────────────── */
+/* --- 07. SKIP LINK --------------------------- */
 .c-skip-link {
   position: absolute;
   top: -100%; left: 1rem;
@@ -276,7 +277,7 @@ body.cursor--hover .c-cursor-dot { opacity: 0; }
 .c-skip-link:focus { top: 1rem; }
 
 
-/* ── 08. PAGE LOAD ──────────────────────────── */
+/* --- 08. PAGE LOAD ----------------------------- */
 body.is-loading * { animation-play-state: paused !important; }
 
 .js-load {
@@ -291,7 +292,7 @@ body.is-loading * { animation-play-state: paused !important; }
 }
 
 
-/* ── 09. HEADER ─────────────────────────────── */
+/* --- 09. HEADER ------------------------------- */
 .l-header {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -432,7 +433,7 @@ body.is-loading * { animation-play-state: paused !important; }
 .c-hamburger[aria-expanded="true"] .c-hamburger__bar:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
 
-/* ── 10. MOBILE NAV ─────────────────────────── */
+/* --- 10. MOBILE NAV ---------------------------- */
 .c-mobile-nav {
   position: fixed;
   inset: 0;
@@ -474,7 +475,7 @@ body.is-loading * { animation-play-state: paused !important; }
 }
 
 
-/* ── 11. HERO ───────────────────────────────── */
+/* --- 11. HERO ---------------------------------- */
 .s-hero {
   min-height: 100vh;
   display: flex;
@@ -733,7 +734,7 @@ body.is-loading * { animation-play-state: paused !important; }
 }
 
 
-/* ── SHARED BUTTON ──────────────────────────── */
+/* --- SHARED BUTTON ----------------------------- */
 .c-btn {
   display: inline-flex;
   align-items: center;
@@ -786,7 +787,7 @@ body.is-loading * { animation-play-state: paused !important; }
 .c-btn--full { width: 100%; justify-content: center; }
 
 
-/* ── 12. SCROLL HINT ────────────────────────── */
+/* --- 12. SCROLL HINT --------------------------- */
 .c-scroll-hint {
   position: absolute;
   bottom: 2.5rem;
@@ -830,7 +831,7 @@ body.is-loading * { animation-play-state: paused !important; }
 }
 
 
-/* ── 13. ABOUT ──────────────────────────────── */
+/* --- 13. ABOUT ----------------------------- */
 .s-about {
   padding-block: 8rem;
   background: var(--c-surface);
@@ -922,7 +923,7 @@ body.is-loading * { animation-play-state: paused !important; }
 }
 
 
-/* ── 14. SERVICES ───────────────────────────── */
+/* --- 14. SERVICES --------------------------- */
 .s-services {
   padding-block: 8rem;
   background: var(--c-bg);
@@ -1062,7 +1063,7 @@ body.is-loading * { animation-play-state: paused !important; }
 .c-service__link:hover { gap: 10px; }
 
 
-/* ── 15. PIPELINE ───────────────────────────── */
+/* --- 15. PIPELINE ---------------------------- */
 .s-pipeline {
   padding-block: 8rem;
   background: var(--c-surface);
@@ -1181,7 +1182,7 @@ body.is-loading * { animation-play-state: paused !important; }
 }
 
 
-/* ── 16. COMMUNITY ──────────────────────────── */
+/* --- 16. COMMUNITY ------------------------- */
 .s-community {
   padding-block: 8rem;
   background: var(--c-bg);
@@ -1267,7 +1268,7 @@ body.is-loading * { animation-play-state: paused !important; }
 .c-audience:hover .c-audience__bar { opacity: 1; }
 
 
-/* ── 17. CONTACT ────────────────────────────── */
+/* --- 17. CONTACT -------------------------- */
 .s-contact {
   padding-block: 8rem;
   background: var(--c-surface);
@@ -1366,12 +1367,13 @@ body.is-loading * { animation-play-state: paused !important; }
   font-size: 0.9rem;
   color: var(--c-t1);
   outline: none;
-  transition:
-    border-color 0.22s,
-    background   0.22s,
-    box-shadow   0.22s;
+  transition: border-color 0.22s, background 0.22s, box-shadow 0.22s;
+}
+
+.c-field__select{
   -webkit-appearance: none;
-  cursor: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .c-field__input::placeholder,
@@ -1420,7 +1422,7 @@ body.is-loading * { animation-play-state: paused !important; }
 }
 
 
-/* ── 18. FOOTER ─────────────────────────────── */
+/* --- 18. FOOTER ------------------------------- */
 .l-footer {
   background: var(--c-ink);
   border-top: 1px solid var(--c-border);
@@ -1492,7 +1494,7 @@ body.is-loading * { animation-play-state: paused !important; }
 .l-footer__legal a:hover { color: var(--c-t2); }
 
 
-/* ── 19. SCROLL REVEAL ──────────────────────── */
+/* -- 19. SCROLL REVEAL --------------------- */
 .js-reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -1505,9 +1507,9 @@ body.is-loading * { animation-play-state: paused !important; }
 .js-reveal.is-visible { opacity: 1; transform: translateY(0); }
 
 
-/* ── 20. BREAKPOINTS ────────────────────────── */
+/* --- 20. BREAKPOINTS ----------------------- */
 
-/* ── 1100px ── */
+/* --- 1100px --- */
 @media (max-width: 1100px) {
   .s-hero__layout { grid-template-columns: 1fr; gap: 4rem; }
   .s-hero__panel  { max-width: 520px; }
@@ -1524,7 +1526,7 @@ body.is-loading * { animation-play-state: paused !important; }
   .l-footer__legal { align-items: flex-start; }
 }
 
-/* ── 768px ── */
+/* --- 768px --- */
 @media (max-width: 768px) {
   :root { --nav-h: 64px; }
   .l-container { padding-inline: 1.25rem; }
@@ -1548,7 +1550,7 @@ body.is-loading * { animation-play-state: paused !important; }
   .l-footer__nav ul { flex-wrap: wrap; gap: 1.2rem; }
 }
 
-/* ── 480px ── */
+/* --- 480px --- */
 @media (max-width: 480px) {
   .s-hero__actions { flex-direction: column; }
   .c-btn { justify-content: center; }

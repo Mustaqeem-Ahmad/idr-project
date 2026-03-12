@@ -1,5 +1,5 @@
 /**
- * Institute of Digital Risk — script.js  v3.0
+ * Institute of Digital Risk — script.js 
  * ─────────────────────────────────────────────
  * Modules:
  *  01. Page load gate
@@ -20,27 +20,27 @@
 (function () {
   'use strict';
 
-  /* ── Helpers ─────────────────────────────── */
+  /* -- Helpers --------------------------------- */
   var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var isTouch        = !window.matchMedia('(hover: hover)').matches;
 
 
-  /* ─────────────────────────────────────────
+  /* ----------------------------------------------
      01. PAGE LOAD GATE
      Removes .is-loading once the window fires
      'load', allowing animations to play.
-  ───────────────────────────────────────── */
+  ---------------------------------------------- */
   window.addEventListener('load', function () {
     document.body.classList.remove('is-loading');
   });
 
 
-  /* ─────────────────────────────────────────
+  /* -----------------------------------------------
      02. GEOMETRIC CANVAS BACKGROUND
      Draws animated geometric primitives on a
      full-viewport fixed canvas using orange
      stroke at low opacity.
-  ───────────────────────────────────────── */
+  ----------------------------------------------- */
   (function initCanvas() {
     var canvas = document.getElementById('js-canvas');
     if (!canvas) return;
@@ -185,11 +185,11 @@
   }());
 
 
-  /* ─────────────────────────────────────────
+  /* ----------------------------------------------
      03. CUSTOM DUAL-LAYER CURSOR
      Small dot snaps instantly; larger ring
      follows with a smooth lag (lerp).
-  ───────────────────────────────────────── */
+   ----------------------------------------------*/
   (function initCursor() {
     if (isTouch) return;
 
@@ -237,9 +237,9 @@
   }());
 
 
-  /* ─────────────────────────────────────────
+  /* -----------------------------------------
      04. SCROLL PROGRESS BAR
-  ───────────────────────────────────────── */
+   -----------------------------------------*/
   (function initProgress() {
     var bar = document.getElementById('js-progress');
     if (!bar) return;
@@ -253,9 +253,9 @@
   }());
 
 
-  /* ─────────────────────────────────────────
+  /* --------------------------------------------
      05. STICKY HEADER
-  ───────────────────────────────────────── */
+  -------------------------------------------- */
   var header = document.getElementById('js-header');
 
   function onScroll() {
@@ -266,11 +266,11 @@
   onScroll();
 
 
-  /* ─────────────────────────────────────────
+  /* ---------------------------------------------
      06. SCROLLSPY — ACTIVE NAV HIGHLIGHT
      Observes each section; activates the
      matching nav link when in view.
-  ───────────────────────────────────────── */
+  --------------------------------------------- */
   (function initSpy() {
     var sections = document.querySelectorAll('section[id]');
     var links    = document.querySelectorAll('[data-spy]');
@@ -289,9 +289,9 @@
   }());
 
 
-  /* ─────────────────────────────────────────
+  /* ------------------------------------------
      07. MOBILE NAV (slide-in)
-  ───────────────────────────────────────── */
+  ------------------------------------------ */
   var hamburger  = document.getElementById('js-hamburger');
   var mobileNav  = document.getElementById('js-mobile-nav');
 
@@ -324,9 +324,9 @@
   }
 
 
-  /* ─────────────────────────────────────────
+  /* -----------------------------------------
      08. SMOOTH ANCHOR SCROLL
-  ───────────────────────────────────────── */
+   -----------------------------------------*/
   document.addEventListener('click', function (e) {
     var a = e.target.closest('a[href^="#"]');
     if (!a) return;
@@ -341,9 +341,9 @@
   });
 
 
-  /* ─────────────────────────────────────────
+  /* -----------------------------------------
      09. SCROLL REVEAL
-  ───────────────────────────────────────── */
+  ----------------------------------------- */
   (function initReveal() {
     var els = document.querySelectorAll('.js-reveal');
 
@@ -365,11 +365,11 @@
   }());
 
 
-  /* ─────────────────────────────────────────
+  /* -----------------------------------------
      10. COUNTER ANIMATION
      Counts from 0 to [data-count] with a
      smooth ease-out quad curve.
-  ───────────────────────────────────────── */
+  ----------------------------------------- */
   (function initCounters() {
     var els = document.querySelectorAll('[data-count]');
     if (!els.length) return;
@@ -416,12 +416,12 @@
   }());
 
 
-  /* ─────────────────────────────────────────
+  /* ------------------------------------------
      11. TYPEWRITER CYCLE
      Cycles through risk-related phrases in
      the hero headline. Respects prefers-
      reduced-motion.
-  ───────────────────────────────────────── */
+   ------------------------------------------*/
   (function initTypewriter() {
     var target = document.getElementById('js-typewriter');
     if (!target || prefersReduced) return;
@@ -500,12 +500,12 @@
   }());
 
 
-  /* ─────────────────────────────────────────
+  /* -----------------------------------------
      12. CARD 3-D TILT
      Adds subtle perspective rotation on
      mousemove for service, fact, audience
      cards. Touch and reduced-motion safe.
-  ───────────────────────────────────────── */
+  ----------------------------------------- */
   (function initTilt() {
     if (isTouch || prefersReduced) return;
 
@@ -534,11 +534,11 @@
   }());
 
 
-  /* ─────────────────────────────────────────
+  /* --------------------------------------------
      13. CONTACT FORM VALIDATION
      Live inline validation on blur + input.
      Shows animated success state on submit.
-  ───────────────────────────────────────── */
+  -------------------------------------------- */
   (function initForm() {
     var form    = document.getElementById('js-form');
     if (!form) return;
