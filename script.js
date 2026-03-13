@@ -26,6 +26,38 @@
 
 
   /* ----------------------------------------------
+     00. THEME TOGGLE
+     Toggles [data-theme="light"] on <html>.
+     Saves preference to localStorage.
+  ---------------------------------------------- */
+  (function initTheme() {
+    var btn  = document.getElementById('js-theme-toggle');
+    var root = document.documentElement;
+    var KEY  = 'idr-theme';
+
+    var saved = localStorage.getItem(KEY);
+    if (saved === 'light') {
+      root.setAttribute('data-theme', 'light');
+    } else if (!saved && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      root.setAttribute('data-theme', 'light');
+    }
+
+    if (!btn) return;
+
+    btn.addEventListener('click', function () {
+      var isLight = root.getAttribute('data-theme') === 'light';
+      if (isLight) {
+        root.removeAttribute('data-theme');
+        localStorage.setItem(KEY, 'dark');
+      } else {
+        root.setAttribute('data-theme', 'light');
+        localStorage.setItem(KEY, 'light');
+      }
+    });
+  }());
+
+
+  /* ----------------------------------------------
      01. PAGE LOAD GATE
      Removes .is-loading once the window fires
      'load', allowing animations to play.
@@ -151,7 +183,8 @@
         }
 
         ctx.save();
-        ctx.strokeStyle = 'rgba(232, 89, 12, ' + s.alpha + ')';
+        var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+        ctx.strokeStyle = (isLight ? 'rgba(184,64,0,' : 'rgba(232,89,12,') + s.alpha + ')';
         ctx.lineWidth   = 0.8;
 
         switch (s.type) {

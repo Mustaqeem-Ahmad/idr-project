@@ -68,6 +68,86 @@
 }
 
 
+/* --- LIGHT MODE ----------------------------- */
+[data-theme="light"] {
+  --c-ink:     #F5F5F0;
+  --c-bg:      #FAFAF8;
+  --c-surface: #F0EFEB;
+  --c-raised:  #E8E7E2;
+  --c-border:  rgba(0,0,0,0.08);
+  --c-border2: rgba(0,0,0,0.13);
+  --c-t1: #16150F;
+  --c-t2: #5A5550;
+  --c-t3: #9B9690;
+}
+
+[data-theme="light"] .l-header.is-scrolled {
+  background: rgba(250,250,248,0.92);
+}
+
+[data-theme="light"] .c-mobile-nav {
+  background: rgba(250,250,248,0.97);
+}
+
+[data-theme="light"] .c-terminal {
+  background: rgba(232,231,226,0.85);
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.04) inset, 0 32px 80px rgba(0,0,0,0.12);
+}
+
+[data-theme="light"] .t-str  { color: #1E7F50; }
+[data-theme="light"] .t-bool { color: #1965A0; }
+
+[data-theme="light"] .c-field__input,
+[data-theme="light"] .c-field__textarea,
+[data-theme="light"] .c-field__select {
+  background: rgba(0,0,0,0.03);
+  color: var(--c-t1);
+}
+
+[data-theme="light"] .c-field__select option {
+  background: var(--c-raised);
+  color: var(--c-t1);
+}
+
+[data-theme="light"] .s-hero__grid {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px);
+}
+
+[data-theme="light"] .s-hero__glow {
+  background: radial-gradient(ellipse, rgba(232,89,12,0.09) 0%, transparent 60%);
+}
+
+/* --- THEME TOGGLE BUTTON ------------------- */
+.c-theme-toggle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--c-border2);
+  background: var(--c-raised);
+  color: var(--c-t2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: none;
+  flex-shrink: 0;
+  transition: background 0.22s, border-color 0.22s, color 0.22s, transform 0.2s var(--ease-spring);
+}
+
+.c-theme-toggle:hover {
+  border-color: var(--o);
+  color: var(--o);
+  transform: rotate(20deg) scale(1.08);
+}
+
+.c-theme-toggle .icon-sun  { display: block; }
+.c-theme-toggle .icon-moon { display: none;  }
+
+[data-theme="light"] .c-theme-toggle .icon-sun  { display: none;  }
+[data-theme="light"] .c-theme-toggle .icon-moon { display: block; }
+
+
 /* --- 02. RESET ----------------------------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -977,13 +1057,27 @@ body.is-loading * { animation-play-state: paused !important; }
   border-color: rgba(232,89,12,0.18);
 }
 
-.c-service--featured .c-service__inner::before {
+/* --- Orange top line — teeno cards pe --- */
+.c-service__inner::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 2px;
   background: linear-gradient(90deg, var(--o), var(--o-lt));
   border-radius: 8px 8px 0 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.38s var(--ease-out);
+}
+
+/* Center card — line hamesha visible */
+.c-service--featured .c-service__inner::before {
+  transform: scaleX(1);
+}
+
+/* Hover par baaki dono cards mein bhi line aaye */
+.c-service:hover .c-service__inner::before {
+  transform: scaleX(1);
 }
 
 /* --- Inner glow on hover --- */
